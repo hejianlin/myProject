@@ -1,4 +1,4 @@
-package com.hejianlin.main;
+﻿package com.hejianlin.main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,6 +17,6 @@ public class App {
 		PrototypeService prototypeService2=context.getBean(PrototypeService.class);
 		System.out.println("SingletonService1与SingletonService2是否相等："+singletonService1.equals(singletonService2));
 		System.out.println("prototypeService1与prototypeService2是否相等："+prototypeService1.equals(prototypeService2));
-	
+	        context.close();
 	}
 }
