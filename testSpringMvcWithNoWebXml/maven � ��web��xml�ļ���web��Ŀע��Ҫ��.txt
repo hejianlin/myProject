@@ -1,0 +1,30 @@
+1、一般情况下，web项目下的jsp文件都是放在WEB-INF的目录下，这里为了提前适应spring-boot项目，将jsp文件放在sources目录下
+2、新建项目使用一般的maven项目即可，不用maven web项目
+3、包类型改为war，而不是jar包
+4、注意如果现在tomcat部署了其他项目，先删除这个server，再重新新建部署当前的项目，防止不必要的麻烦
+5、注意maven插件的使用，使得maven使用当前可用的jar版本来编译，而不是使用默认的很久的版本
+<build>
+		<plugins>
+			<plugin>
+			<!-- 编译插件，指定对应的编译版本，否则maven用默认的版本来编译，可能会导致出错 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<!-- 用于打包war包的工具 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+6、需要引入runtiem-server 的library
+7、视图解析器对象的方法要用@Bean来注解
+8、其他的具体看代码
