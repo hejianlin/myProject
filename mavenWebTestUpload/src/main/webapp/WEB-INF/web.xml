@@ -1,0 +1,63 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>testUploadAndDownload</display-name>
+	<servlet>
+		<servlet-name>SeeRequestContentServlet</servlet-name>
+		<servlet-class>com.hejianlin.testUpload.SeeRequestContentServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<servlet-class>com.hejianlin.testUpload.FileUploadServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AJAXFileUploadServlet</servlet-name>
+		<servlet-class>com.hejianlin.testUpload.AJAXFileUploadServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SeeProgressServlet</servlet-name>
+		<servlet-class>com.hejianlin.testUpload.SeeProgressServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>FileDownloadServlet</servlet-name>
+		<servlet-class>com.hejianlin.testDownload.FileDownloadServlet</servlet-class>
+	</servlet>
+	
+
+
+	<servlet-mapping>
+		<servlet-name>SeeRequestContentServlet</servlet-name>
+		<url-pattern>/SeeRequestContentServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<url-pattern>/FileUploadServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AJAXFileUploadServlet</servlet-name>
+		<url-pattern>/AJAXFileUploadServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SeeProgressServlet</servlet-name>
+		<url-pattern>/SeeProgressServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>FileDownloadServlet</servlet-name>
+		<url-pattern>/FileDownloadServlet</url-pattern>
+	</servlet-mapping>
+
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
