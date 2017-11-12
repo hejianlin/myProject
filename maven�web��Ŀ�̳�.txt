@@ -1,0 +1,53 @@
+1、首先新建maven web项目
+2、pom文件设置Java默认版本，加入maven编译插件，war包打包插件，如下：
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<build>
+		<finalName>mavenWebTestUpload</finalName>
+		<plugins>
+			<plugin>
+				<!-- 编译插件，指定对应的编译版本，否则maven用默认的版本来编译，可能会导致出错 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<!-- 用于打包war包的工具 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+		</plugins>
+	</build>
+
+3、为项目添加tomcat的library
+
+4、删除默认生成的index.jsp文件，重新新建index.jsp文件
+
+5、web.xml使用默认的即可，默认的版本为_2_3
+
+6、重新update项目即可
+
+其他注意事项：
+1、如果jar下载不了，因为使用的是阿里云的镜像，直接去这个网址看有没有，浏览器下载
+后放在本地仓库，引用即可。
+
+2、json对象转换jar包：
+<!--json-lib，需要依赖1.5的jdk,直接下载后放在自己的本地仓库中，引用-->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+
+3、为了解决maven出现一直在更新依赖的问题，可以这样子设置：
+maven选项设置为Offline即可
