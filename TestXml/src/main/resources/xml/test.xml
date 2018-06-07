@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_131" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="TestMaven.TestXml.SerialableObject">
+    <void property="id">
+     <int>1</int>
+    </void>
+    <void property="name">
+     <string>jianlin</string>
+    </void>
+    <void property="value">
+     <double>26.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="TestMaven.TestXml.SerialableObject">
+    <void property="id">
+     <int>2</int>
+    </void>
+    <void property="name">
+     <string>jianhong</string>
+    </void>
+    <void property="value">
+     <double>31.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="TestMaven.TestXml.SerialableObject">
+    <void property="id">
+     <int>3</int>
+    </void>
+    <void property="name">
+     <string>xiaoshan</string>
+    </void>
+    <void property="value">
+     <double>28.0</double>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="TestMaven.TestXml.SerialableObject">
+    <void property="id">
+     <int>4</int>
+    </void>
+    <void property="name">
+     <string>xiaoxuan</string>
+    </void>
+    <void property="value">
+     <double>29.0</double>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>
